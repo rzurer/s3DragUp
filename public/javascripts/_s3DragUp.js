@@ -1,10 +1,24 @@
 /*globals  $, window*/
 "use strict";
-var initializeModule = function () {
-	var healthCheck = function (date) {
+var noImageSrc = 'images/dropImageHere.png',
+	healthCheck = function (date) {
 		$('.s3DragUpContainer').text(date);
+	},
+	onFileDropped = function (files) {
+		$('#dropImage').attr("src", noImageSrc);
+	},
+	onUrlDropped = function (url) {
+		$('#dropImage').attr("src", url && url.length > 0 ? url : noImageSrc);
+		$('#dropImage').css("width", '300px');
+	},
+	ready = function () {
+		$(function () {
+			var dragDropControl;
+			window.s3DragUp.heartbeat(healthCheck);
+			dragDropControl = window.dragDropControl;
+			$('#dropImage').attr("src", noImageSrc);
+			dragDropControl.ready($('.dragDropControlContainer'), $('#dropImage'));
+			dragDropControl.addListener('fileDropped', onFileDropped);
+			dragDropControl.addListener('urlDropped', onUrlDropped);
+		});
 	};
-	$(function () {
-		window.s3DragUp.heartbeat(healthCheck);
-	});
-};

@@ -1,7 +1,8 @@
 'use strict';
 function configure(app, express, flash, browserify) {
     app.configure(function () {
-        var pub, bundle;
+        var pub, 
+        bundle,
         pub = __dirname + '/public';
         app.set('views', __dirname + '/views');
         app.set('view engine', 'jade');
@@ -26,3 +27,6 @@ function configure(app, express, flash, browserify) {
     });
 }
 exports.configure = configure;
+
+
+
