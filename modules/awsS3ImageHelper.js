@@ -1,6 +1,6 @@
 "use strict";
 exports.awsS3ImageHelper = function (options) {
-		awsS3Helper = require('./awsS3Helper').awsS3Helper(),
+	var awsS3Helper = require('./awsS3Helper').awsS3Helper(),
 		imageHelper = require('./imageHelper').imageHelper(),
 		fileHelper = require('./fileHelper').fileHelper(),
 		Emitter = require('events').EventEmitter,

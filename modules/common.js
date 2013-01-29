@@ -1,6 +1,6 @@
 "use strict";
 exports.common = function (storage) {
-	var that,
+	var that;
 	that = {
 		getCurrentDate : function (dayFirst) {
 			var date, day, month, year, monthString, dayString;

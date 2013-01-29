@@ -1,9 +1,6 @@
 /*globals  $, window*/
 "use strict";
 var noImageSrc = 'images/dropImageHere.png',
-	healthCheck = function (date) {
-		$('.s3DragUpContainer').text(date);
-	},
 	onFileDropped = function (files) {
 		$('#dropImage').attr("src", noImageSrc);
 	},
@@ -13,9 +10,7 @@ var noImageSrc = 'images/dropImageHere.png',
 	},
 	ready = function () {
 		$(function () {
-			var dragDropControl;
-			window.s3DragUp.heartbeat(healthCheck);
-			dragDropControl = window.dragDropControl;
+			var dragDropControl = window.dragDropControl;
 			$('#dropImage').attr("src", noImageSrc);
 			dragDropControl.ready($('.dragDropControlContainer'), $('#dropImage'));
 			dragDropControl.addListener('fileDropped', onFileDropped);

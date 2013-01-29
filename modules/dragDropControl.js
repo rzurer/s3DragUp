@@ -54,11 +54,11 @@ exports.dragDropControl = function () {
 			var container, image;
 			dropZone = containerControl;
 			image = imageControl.get(0);
-			if(image){
+			if (image) {
 				image.addEventListener("dragover", doDragOver, true);
 				image.addEventListener("drop", doDrop, true);
 				image.addEventListener("dragenter", doDragEnter, true);
-				image.addEventListener("dragleave", doDragLeave, true);				
+				image.addEventListener("dragleave", doDragLeave, true);
 			}
 		},
 		that = {
