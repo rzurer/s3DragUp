@@ -59,4 +59,3 @@ exports.awsS3Helper = function () {
 		};
 	return that;
 };
-

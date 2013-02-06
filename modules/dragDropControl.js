@@ -47,7 +47,7 @@ exports.dragDropControl = function () {
 			if (!url || url === 'undefined') {
 				url = event.dataTransfer.getData("URL");
 			}
-			emitter.emit('urlDropped', [url]);
+			emitter.emit('urlDropped', url);
 			dropZone.removeClass('hover');
 		},
 		initializeEvents = function (containerControl, imageControl) {

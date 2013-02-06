@@ -18,12 +18,10 @@ function configure(app, express, flash, browserify) {
             res.header('Cache-Control', "max-age=31557600000, public");
             next();
         });
-        app.use(express.static(pub));
         bundle = browserify(__dirname + '/client.js');
         app.use(bundle);
-    });
-    app.configure('development', function () {
         app.use(express.errorHandler({dumpExceptions: true}));
+        app.use(express.static(pub));
     });
 }
 exports.configure = configure;

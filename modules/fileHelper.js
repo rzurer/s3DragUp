@@ -1,9 +1,10 @@
 "use strict";
-exports.fileHelper = function (tempPath) {
+exports.fileHelper = function () {
 	var fs = require("fs"),
 		http = require("http"),
 		https = require("https"),
 		url = require("url"),
+		tempPath = '/home/zurer/projects/s3DragUp/public/temp',
 		that = {
 			wantSecureTransport : function (inputUrl) {
 				return url.parse(inputUrl).protocol === 'https:';

@@ -107,4 +107,3 @@ exports.awsS3ImageHelper = function (options) {
 		}
 	};
 };
-
